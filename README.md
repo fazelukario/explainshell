@@ -42,7 +42,7 @@ Setup a working environment that lets you run the web interface locally using do
 $ curl -L -o /tmp/dump.gz https://github.com/idank/explainshell/releases/download/db-dump/dump.gz
 
 # Clone Repository
-$ git clone https://github.com/idank/explainshell.git
+$ git clone https://github.com/fazelukario/explainshell.git
 
 # start containers, load man pages from dump
 $ docker-compose build
