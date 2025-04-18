@@ -49,10 +49,12 @@ def explain():
     s = store.store('explainshell', config.MONGO_URI)
     try:
         matches, helptext = explaincommand(command, s)
-        return render_template('explain.html',
-                               matches=matches,
-                               helptext=helptext,
-                               getargs=command)
+        return {
+            'status': 'success',
+            'matches': matches,
+            'helptext': helptext,
+            'getargs': command
+        }
 
     except errors.ProgramDoesNotExist, e:
         return { 'status': 'missingmanpage', 'e': e, 'title': 'missing man page' }
