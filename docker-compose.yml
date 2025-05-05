@@ -2,6 +2,8 @@ version: '2'
 services:
   db:
     image: mongo
+    volumes:
+      - mongodb_data:/data/db
   web:
     build: .
     command: make serve
@@ -14,3 +16,6 @@ services:
       - "5000:5000"
     depends_on:
       - db
+
+volumes:
+  mongodb_data:
